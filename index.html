@@ -3,180 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPUTECH WITH SREERAJ PATNAIK</title>
+    <title>Computech with Sreeraj Patnaik</title>
     <style>
-        /* Basic Reset */
+        /* Reset */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
+        /* Body and General Styling */
         body {
             font-family: Arial, sans-serif;
+            display: flex;
             background-color: #f0f2f5;
             color: #333;
-            line-height: 1.6;
         }
 
-        /* Header Style */
-        header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #212121;
             color: #fff;
-            padding: 1.5em 0;
+            position: fixed;
+            height: 100%;
+            padding: 1em 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1.2em;
+        .sidebar h1 {
+            font-size: 1.8em;
             font-weight: bold;
+            margin-bottom: 1.5em;
+            color: #3498db;
+        }
+
+        .sidebar nav a {
+            display: block;
+            color: #bbb;
+            padding: 1em 0;
             font-size: 1.2em;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #ffda79;
-            text-shadow: 0 0 10px #ffda79;
+        .sidebar nav a:hover {
+            color: #3498db;
         }
 
-        /* Container for content */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
+        /* Main Content Area */
+        .content {
+            margin-left: 250px;
+            padding: 2em;
+            width: calc(100% - 250px);
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
         }
 
-        /* Section Style */
-        .about, .videos {
-            background: #fff;
-            padding: 1.8em;
-            margin: 1.8em 0;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .section {
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .about:hover, .videos:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Section Headings */
-        .about h2, .videos h2 {
+        .section h2 {
+            font-size: 1.5em;
             color: #333;
-            margin-bottom: 0.5em;
-            font-size: 2em;
-            border-bottom: 2px solid #6a11cb;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 1em;
             padding-bottom: 0.3em;
         }
 
-        .about p, .videos p {
-            color: #555;
+        .section p {
             font-size: 1.15em;
-            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1em;
         }
 
-        /* Video Grid */
-        .video-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2em;
-            justify-content: space-around;
+        /* Grid Layout for Videos and Playlists */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5em;
         }
 
-        .video-grid iframe {
-            width: 100%;
-            max-width: 300px;
-            height: 200px;
-            border: none;
+        .item {
+            background-color: #f8f9fa;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
         }
 
-        .video-grid iframe:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        .item:hover {
+            transform: translateY(-5px);
         }
 
-        /* Footer Style */
-        footer {
-            background: #333;
-            color: #fff;
+        .item iframe {
+            width: 100%;
+            height: 150px;
+        }
+
+        .item-description {
+            padding: 1em;
+            font-size: 1em;
+            color: #333;
             text-align: center;
-            padding: 1.8em 0;
-            margin-top: 2em;
-            font-size: 1.1em;
         }
 
-        footer p {
-            margin: 0.8em 0;
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 1em;
+            color: #212121;
+            margin-top: 2em;
+            font-size: 1em;
         }
 
         footer a {
-            color: #ffda79;
+            color: #3498db;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: color 0.3s;
         }
 
         footer a:hover {
-            color: #f2a365;
-            text-shadow: 0 0 8px #f2a365;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h1>Computech with Sreeraj Patnaik</h1>
         <nav>
             <a href="#about">About</a>
+            <a href="#playlists">Playlists</a>
             <a href="#videos">Videos</a>
             <a href="#contact">Contact</a>
         </nav>
-    </div>
-</header>
+    </aside>
 
-<main class="container">
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About My Channel</h2>
-        <p>Welcome to my YouTube channel! Here, I upload videos on TUTORIALS or VIDEOS RELATED TO COMPUTERS.
-            My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
-    </section>
+    <!-- Main Content -->
+    <main class="content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About My Channel</h2>
+            <p>Welcome to Computech with Sreeraj Patnaik! Here, you’ll find tutorials, tips, and insights in the world of computer science and technology. Subscribe to stay up-to-date with the latest trends and skills in the industry.</p>
+        </section>
 
-    <!-- Videos Section -->
-    <section id="videos" class="videos">
-        <h2>Recent Videos</h2>
-        <div class="video-grid">
-            <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
-            <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
-            <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
-            <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video Title 4"></iframe>
-        </div>
-    </section>
-</main>
+        <!-- Playlists Section -->
+        <section id="playlists" class="section">
+            <h2>Featured Playlists</h2>
+            <div class="grid">
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7dz9rRZNq3JsTPuouOzZULx" title="Playlist 1"></iframe>
+                    <div class="item-description">POWERPOINT TUTORIALS Basics</div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7f893y3iQvn4Pn69Xl3ipal" title="Playlist 2"></iframe>
+                    <div class="item-description">AI TOOLS FOR ALL PURPOSES</div>
+                </div>
+            </div>
+        </section>
 
-<!-- Contact & Social Media -->
-<footer>
-    <p>Connect with me on social media:</p>
-    <p>
-        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
-        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a> |
-        <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a>
-    </p>
-    <p>&copy; 2024 Computech with Sreeraj Patnaik</p>
-</footer>
+        <!-- Videos Section -->
+        <section id="videos" class="section">
+            <h2>Recent Videos</h2>
+            <div class="grid">
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video 1"></iframe>
+                    <div class="item-description">Intro to HTML & CSS</div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video 2"></iframe>
+                    <div class="item-description">JavaScript Basics</div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video 3"></iframe>
+                    <div class="item-description">Responsive Design Tips</div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video 4"></iframe>
+                    <div class="item-description">Advanced CSS Techniques</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a> | <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a></p>
+        <p>&copy; 2024 Computech with Sreeraj Patnaik</p>
+    </footer>
 
 </body>
 </html>
