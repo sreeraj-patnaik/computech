@@ -3,201 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computech with Sreeraj Patnaik</title>
+    <title>COMPUTECH WITH SREERAJ PATNAIK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
+        /* Basic Reset */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        /* Body and General Styling */
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            background-color: #f0f2f5;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9; /* Light background for a clean look */
             color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
         }
 
-        /* Sidebar Styling */
-        .sidebar {
-            width: 250px;
-            background-color: #212121;
-            color: #fff;
-            position: fixed;
-            height: 100%;
-            padding: 1em 0;
+        header {
+            background: #2c3e50; /* Darker blue-gray for a professional look */
+            color: #ecf0f1; /* Light color for text */
+            padding: 1em 0.5em; /* Reduced padding */
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .sidebar h1 {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-bottom: 1.5em;
-            color: #3498db;
+        header h1 {
+            margin: 0;
+            font-size: 2em; /* Smaller font size */
+            animation: fadeIn 1s ease-in-out;
         }
 
-        .sidebar nav a {
-            display: block;
-            color: #bbb;
-            padding: 1em 0;
-            font-size: 1.2em;
+        nav {
+            margin: 0.5em 0;
+        }
+
+        nav a {
+            color: #ecf0f1; /* Consistent text color */
             text-decoration: none;
-            transition: color 0.3s;
+            margin: 0 1.5em;
+            font-weight: bold;
+            font-size: 1em; /* Slightly smaller font size */
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        .sidebar nav a:hover {
-            color: #3498db;
+        nav a:hover {
+            color: #ffcc00; /* Gold color on hover */
+            transform: scale(1.1);
         }
 
-        /* Main Content Area */
-        .content {
-            margin-left: 250px;
-            padding: 2em;
-            width: calc(100% - 250px);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 1em;
+        }
+
+        /* Tabs Style */
+        .tabs {
             display: flex;
-            flex-direction: column;
-            gap: 2em;
+            justify-content: space-around;
+            border-bottom: 2px solid #2c3e50; /* Bottom border for tabs */
+            margin: 1em 0;
         }
 
-        .section {
-            background-color: #fff;
-            padding: 1.5em;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .tab {
+            padding: 1em 2em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border-radius: 5px 5px 0 0;
+            background: #fff;
         }
 
-        .section h2 {
-            font-size: 1.5em;
-            color: #333;
-            border-bottom: 2px solid #3498db;
-            margin-bottom: 1em;
-            padding-bottom: 0.3em;
+        .tab:hover {
+            background: #ffcc00; /* Gold on hover */
+            transform: scale(1.05);
         }
 
-        .section p {
-            font-size: 1.15em;
-            color: #555;
-            margin-bottom: 1em;
+        .tab.active {
+            background: #2c3e50; /* Darker background for active tab */
+            color: #fff;
         }
 
-        /* Grid Layout for Videos and Playlists */
-        .grid {
+        /* Content Section */
+        .content {
+            display: none;
+            background: #fff; /* White background for sections */
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+        }
+
+        .content.active {
+            display: block; /* Show active content */
+        }
+
+        /* Gallery */
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5em;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1em;
+            justify-items: center;
         }
 
-        .item {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .item:hover {
-            transform: translateY(-5px);
-        }
-
-        .item iframe {
+        .gallery iframe {
             width: 100%;
-            height: 150px;
+            height: 200px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .item-description {
-            padding: 1em;
-            font-size: 1em;
-            color: #333;
-            text-align: center;
+        .gallery iframe:hover {
+            transform: scale(1.05);
         }
 
-        /* Footer Styling */
         footer {
+            background: #2c3e50; /* Consistent with header */
+            color: #ecf0f1; /* Light color for text */
             text-align: center;
-            padding: 1em;
-            color: #212121;
+            padding: 1.5em 0;
             margin-top: 2em;
-            font-size: 1em;
+            border-top: 5px solid #ffcc00; /* Gold border at the top */
+        }
+
+        footer p {
+            margin: 0.5em 0;
         }
 
         footer a {
-            color: #3498db;
+            color: #ffcc00; /* Gold for links */
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #333;
+            color: #f2a365; /* Slightly darker gold on hover */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em; /* Adjust for smaller screens */
+            }
+
+            nav a {
+                margin: 0 0.5em;
+                font-size: 0.9em; /* Adjust for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em; /* Further adjust for small screens */
+            }
+
+            nav a {
+                margin: 0 0.3em;
+                font-size: 0.8em; /* Further adjust for small screens */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <h1>Computech with Sreeraj Patnaik</h1>
+<header>
+    <div class="container">
+        <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
         <nav>
             <a href="#about">About</a>
-            <a href="#playlists">Playlists</a>
-            <a href="#videos">Videos</a>
             <a href="#contact">Contact</a>
         </nav>
-    </aside>
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <main class="content">
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About My Channel</h2>
-            <p>Welcome to Computech with Sreeraj Patnaik! Here, you’ll find tutorials, tips, and insights in the world of computer science and technology. Subscribe to stay up-to-date with the latest trends and skills in the industry.</p>
-        </section>
+<main class="container">
+    <!-- About Section -->
+    <section id="about">
+        <h2>About My Channel</h2>
+        <p>Welcome to my YouTube channel! Here, I upload videos on tutorials and topics related to computers. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
+    </section>
 
-        <!-- Playlists Section -->
-        <section id="playlists" class="section">
-            <h2>Featured Playlists</h2>
-            <div class="grid">
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7dz9rRZNq3JsTPuouOzZULx" title="Playlist 1"></iframe>
-                    <div class="item-description">POWERPOINT TUTORIALS Basics</div>
-                </div>
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7f893y3iQvn4Pn69Xl3ipal" title="Playlist 2"></iframe>
-                    <div class="item-description">AI TOOLS FOR ALL PURPOSES</div>
-                </div>
-            </div>
-        </section>
+    <!-- Tabs for Videos and Playlists -->
+    <div class="tabs">
+        <div class="tab active" onclick="showContent('videos')">Videos</div>
+        <div class="tab" onclick="showContent('playlists')">Playlists</div>
+    </div>
 
-        <!-- Videos Section -->
-        <section id="videos" class="section">
-            <h2>Recent Videos</h2>
-            <div class="grid">
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video 1"></iframe>
-                    <div class="item-description">Intro to HTML & CSS</div>
-                </div>
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video 2"></iframe>
-                    <div class="item-description">JavaScript Basics</div>
-                </div>
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video 3"></iframe>
-                    <div class="item-description">Responsive Design Tips</div>
-                </div>
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video 4"></iframe>
-                    <div class="item-description">Advanced CSS Techniques</div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Videos Content -->
+    <div id="videos" class="content active">
+        <h2>Recent Videos</h2>
+        <div class="gallery">
+            <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
+            <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
+            <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
+            <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video Title 4"></iframe>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a> | <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a></p>
-        <p>&copy; 2024 Computech with Sreeraj Patnaik</p>
-    </footer>
+    <!-- Playlists Content -->
+    <div id="playlists" class="content">
+        <h2>Watch My Playlist</h2>
+        <div class="gallery">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7dz9rRZNq3JsTPuouOzZULx" title="My Playlist"></iframe>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>Connect with me on social media:</p>
+    <p>
+        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a> |
+        <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a>
+    </p>
+    <p>&copy; 2024 Computech with Sreeraj Patnaik</p>
+</footer>
+
+<script>
+    function showContent(contentId) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content');
+
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+        document.getElementById(contentId).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
