@@ -19,60 +19,76 @@
             line-height: 1.6;
         }
 
+        /* Header Style */
         header {
             background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: #fff;
             padding: 1.5em 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 1em;
+            margin: 0 1.2em;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.2em;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: #ffda79;
+            text-shadow: 0 0 10px #ffda79;
         }
 
+        /* Container for content */
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            overflow: auto;
         }
 
+        /* Section Style */
         .about, .videos {
             background: #fff;
-            padding: 1.5em;
-            margin: 1.5em 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.8em;
+            margin: 1.8em 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .about:hover, .videos:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Headings */
         .about h2, .videos h2 {
             color: #333;
             margin-bottom: 0.5em;
+            font-size: 2em;
+            border-bottom: 2px solid #6a11cb;
+            padding-bottom: 0.3em;
         }
 
-        .about p, .video-grid p {
+        .about p, .videos p {
             color: #555;
-            font-size: 1.1em;
+            font-size: 1.15em;
+            line-height: 1.8;
         }
 
+        /* Video Grid */
         .video-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 1em;
+            gap: 1.2em;
             justify-content: space-around;
         }
 
@@ -88,29 +104,33 @@
 
         .video-grid iframe:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
+        /* Footer Style */
         footer {
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 1.5em 0;
+            padding: 1.8em 0;
             margin-top: 2em;
+            font-size: 1.1em;
         }
 
         footer p {
-            margin: 0.5em 0;
+            margin: 0.8em 0;
         }
 
         footer a {
             color: #ffda79;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         footer a:hover {
             color: #f2a365;
+            text-shadow: 0 0 8px #f2a365;
         }
     </style>
 </head>
@@ -139,7 +159,6 @@
     <section id="videos" class="videos">
         <h2>Recent Videos</h2>
         <div class="video-grid">
-            <!-- Replace the src URLs with the URLs of your YouTube videos -->
             <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
             <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
             <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
