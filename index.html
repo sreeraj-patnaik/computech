@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPUTECH WITH SREERAJ PATNAIK</title>
@@ -15,42 +15,82 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9; /* Light background for a clean look */
-            color: #333;
+            background-color: #f4f4f6;
+            color: #2d2e33;
             line-height: 1.6;
             transition: background-color 0.3s ease;
         }
 
         header {
-            background: #2c3e50; /* Darker blue-gray for a professional look */
-            color: #ecf0f1; /* Light color for text */
-            padding: 1em 0.5em; /* Reduced padding */
+            background: #1a1c26;
+            color: #f4f4f6;
+            padding: 1em;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        header .logo {
+            max-width: 100px; /* Adjust logo size */
+            margin-bottom: 0.5em; /* Space between logo and title */
         }
 
         header h1 {
             margin: 0;
-            font-size: 2em; /* Smaller font size */
+            font-size: 2.2em;
+            font-weight: 700;
             animation: fadeIn 1s ease-in-out;
         }
 
         nav {
-            margin: 0.5em 0;
+            margin-top: 0.5em;
         }
 
         nav a {
-            color: #ecf0f1; /* Consistent text color */
+            color: #d9a52e;
             text-decoration: none;
             margin: 0 1.5em;
             font-weight: bold;
-            font-size: 1em; /* Slightly smaller font size */
+            font-size: 1em;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
-            color: #ffcc00; /* Gold color on hover */
+            color: #ffd700;
             transform: scale(1.1);
+        }
+
+        .scrolling-feedback {
+            background-color: #ffd700;
+            color: #1a1c26;
+            padding: 8px 0;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            animation: glow-blink 1s infinite alternate;
+        }
+
+        .scrolling-feedback a {
+            color: #1a1c26;
+            background: #d9a52e;
+            padding: 6px 12px;
+            margin-left: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Keyframes for blinking glow effect */
+        @keyframes glow-blink {
+            0%, 100% {
+                text-shadow: none;
+            }
+            50% {
+                text-shadow: 0 0 8px #ffd700, 0 0 12px #ffd700, 0 0 16px #ffd700;
+            }
         }
 
         .container {
@@ -63,9 +103,9 @@
         /* Tabs Style */
         .tabs {
             display: flex;
-            justify-content: space-around;
-            border-bottom: 2px solid #2c3e50; /* Bottom border for tabs */
-            margin: 1em 0;
+            justify-content: center;
+            border-bottom: 2px solid #d9a52e;
+            margin: 2em 0;
         }
 
         .tab {
@@ -73,31 +113,34 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.3s ease;
             border-radius: 5px 5px 0 0;
-            background: #fff;
+            background: #f4f4f6;
+            color: #1a1c26;
+            font-weight: bold;
         }
 
         .tab:hover {
-            background: #ffcc00; /* Gold on hover */
-            transform: scale(1.05);
+            background: #d9a52e;
+            color: #f4f4f6;
         }
 
         .tab.active {
-            background: #2c3e50; /* Darker background for active tab */
-            color: #fff;
+            background: #1a1c26;
+            color: #ffd700;
         }
 
         /* Content Section */
         .content {
             display: none;
-            background: #fff; /* White background for sections */
+            background: #f4f4f6;
             padding: 2em;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             margin-bottom: 2em;
+            border-top: 2px solid #d9a52e;
         }
 
         .content.active {
-            display: block; /* Show active content */
+            display: block;
         }
 
         /* Gallery */
@@ -112,22 +155,23 @@
             width: 100%;
             height: 200px;
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery iframe:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         footer {
-            background: #2c3e50; /* Consistent with header */
-            color: #ecf0f1; /* Light color for text */
+            background: #1a1c26;
+            color: #f4f4f6;
             text-align: center;
             padding: 1.5em 0;
+            border-top: 4px solid #d9a52e;
             margin-top: 2em;
-            border-top: 5px solid #ffcc00; /* Gold border at the top */
         }
 
         footer p {
@@ -135,14 +179,14 @@
         }
 
         footer a {
-            color: #ffcc00; /* Gold for links */
+            color: #ffd700;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #f2a365; /* Slightly darker gold on hover */
+            color: #d9a52e;
         }
 
         /* Animations */
@@ -160,23 +204,31 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em; /* Adjust for smaller screens */
+                font-size: 1.8em;
             }
 
             nav a {
                 margin: 0 0.5em;
-                font-size: 0.9em; /* Adjust for smaller screens */
+                font-size: 0.9em;
+            }
+
+            header .logo {
+                max-width: 80px; /* Adjust logo size for smaller screens */
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 1.5em; /* Further adjust for small screens */
+                font-size: 1.5em;
             }
 
             nav a {
                 margin: 0 0.3em;
-                font-size: 0.8em; /* Further adjust for small screens */
+                font-size: 0.8em;
+            }
+
+            header .logo {
+                max-width: 60px; /* Further adjust for mobile */
             }
         }
     </style>
@@ -184,14 +236,21 @@
 <body>
 
 <header>
-    <div class="container">
-        <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
+    <img src="images/logo.png" alt="Logo" class="logo"> <!-- Replace with your logo path -->
+    <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
+
+<!-- Scrolling Feedback Request -->
+<div class="scrolling-feedback">
+    <marquee behavior="scroll" direction="left" style="font-weight: bold;">
+        We value your feedback! Let us know how we can improve the channel. 
+        <a href="https://surveyheart.com/form/6723cd32c6f4220631356d9d" target="_blank">Take Survey</a>
+    </marquee>
+</div>
 
 <main class="container">
     <!-- About Section -->
@@ -213,27 +272,27 @@
             <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
             <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
             <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
-            <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video Title 4"></iframe>
+            <iframe src="https://www.youtube.com/embed/fvGoZ5jU0Ik" title="Video Title 4"></iframe>
+            <iframe src="https://www.youtube.com/embed/ylL9rebJYpk" title="Video Title 5"></iframe>
+            <iframe src="https://www.youtube.com/embed/--nrRiDpG-Q" title="Video Title 6"></iframe>
+            <iframe src="https://www.youtube.com/embed/1e5VQeVMm0E" title="Video Title 7"></iframe>
         </div>
     </div>
 
     <!-- Playlists Content -->
     <div id="playlists" class="content">
-        <h2>Watch My Playlist</h2>
-        <div class="gallery">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PL78zfJPerI7dz9rRZNq3JsTPuouOzZULx" title="My Playlist"></iframe>
-        </div>
+        <h2>Playlists</h2>
+        <p>Here you can find collections of videos grouped into playlists. More content is coming soon!</p>
     </div>
 </main>
 
 <footer>
-    <p>Connect with me on social media:</p>
+    <p>&copy; 2024 Sreeraj Patnaik | Connect with me:</p>
     <p>
+        <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a> |
         <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
-        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a> |
-        <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a>
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
     </p>
-    <p>&copy; 2024 Computech with Sreeraj Patnaik</p>
 </footer>
 
 <script>
@@ -241,16 +300,11 @@
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.content');
 
-        tabs.forEach(tab => {
-            tab.classList.remove('active');
-        });
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
 
-        contents.forEach(content => {
-            content.classList.remove('active');
-        });
-
-        document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
         document.getElementById(contentId).classList.add('active');
+        document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
     }
 </script>
 
