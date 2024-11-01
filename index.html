@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPUTECH WITH SREERAJ PATNAIK</title>
@@ -18,9 +18,6 @@
             background-color: #f4f4f6;
             color: #2d2e33;
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             transition: background-color 0.3s ease;
         }
 
@@ -30,8 +27,10 @@
             padding: 1em;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         header .logo {
@@ -40,8 +39,14 @@
         }
 
         header h1 {
+            margin: 0;
             font-size: 2.2em;
             font-weight: 700;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        nav {
+            margin-top: 0.5em;
         }
 
         nav a {
@@ -49,6 +54,7 @@
             text-decoration: none;
             margin: 0 1.5em;
             font-weight: bold;
+            font-size: 1em;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
@@ -58,71 +64,51 @@
         }
 
         .scrolling-feedback {
-            background-color: #ffd700;
-            color: #1a1c26;
+            background-color: #222; /* Change the background color here */
+            color: #ffd700;
             padding: 8px 0;
             text-align: center;
             overflow: hidden;
             font-weight: bold;
-            width: 100%;
+            animation: glow-blink 1s infinite alternate;
+            border-bottom: 2px solid #ffd700;
         }
 
         .scrolling-feedback a {
-            color: #1a1c26;
-            background: #d9a52e;
+            color: #ffd700;
+            background: #444;
             padding: 6px 12px;
             margin-left: 10px;
             border-radius: 4px;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        /* Layout */
-        .main-container {
-            display: flex;
+        /* Keyframes for glowing effect */
+        @keyframes glow-blink {
+            0%, 100% {
+                text-shadow: none;
+            }
+            50% {
+                text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+            }
+        }
+
+        .container {
             width: 90%;
             max-width: 1200px;
-            margin-top: 20px;
-            gap: 20px;
-            flex-direction: row; /* Default to row for larger screens */
-        }
-
-        .content-container {
-            flex: 4;
+            margin: auto;
             padding: 1em;
-            background: #f4f4f6;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .sidebar {
+        .content-wrapper {
             flex: 1;
             padding: 1em;
-            background: #1a1c26;
-            color: #f4f4f6;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            max-width: 300px;
-            text-align: center;
         }
 
-        .sidebar img.profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 0.5em;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .sidebar h3 {
-            color: #ffd700;
-            font-size: 1.4em;
-            margin-bottom: 0.5em;
-        }
-
-        .sidebar p {
-            margin: 0.5em 0;
-        }
-
+        /* Tabs Style */
         .tabs {
             display: flex;
             justify-content: center;
@@ -133,28 +119,44 @@
         .tab {
             padding: 1em 2em;
             cursor: pointer;
-            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border-radius: 5px 5px 0 0;
             background: #f4f4f6;
             color: #1a1c26;
+            font-weight: bold;
         }
 
-        .tab:hover, .tab.active {
+        .tab:hover {
+            background: #d9a52e;
+            color: #f4f4f6;
+        }
+
+        .tab.active {
             background: #1a1c26;
             color: #ffd700;
         }
 
+        /* Content Section */
         .content {
             display: none;
+            background: #f4f4f6;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            border-top: 2px solid #d9a52e;
         }
 
         .content.active {
             display: block;
         }
 
+        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1em;
+            justify-items: center;
         }
 
         .gallery iframe {
@@ -162,6 +164,13 @@
             height: 200px;
             border: none;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery iframe:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         footer {
@@ -169,42 +178,64 @@
             color: #f4f4f6;
             text-align: center;
             padding: 1.5em 0;
-            width: 100%;
-            max-width: 1200px;
+            border-top: 4px solid #d9a52e;
             margin-top: 2em;
+        }
+
+        footer p {
+            margin: 0.5em 0;
         }
 
         footer a {
             color: #ffd700;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
             color: #d9a52e;
         }
 
-        /* Media Query for Mobile */
+        /* About Host Section */
+        .about-host {
+            width: 20%;
+            padding: 1em;
+            background-color: #f4f4f6;
+            border-left: 2px solid #d9a52e;
+            text-align: center;
+        }
+
+        .about-host img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-host h3 {
+            color: #d9a52e;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column; /* Stack content and sidebar vertically */
-            }
-
-            .sidebar {
-                max-width: 100%;
-                margin-top: 20px;
-            }
-
             header h1 {
                 font-size: 1.8em;
             }
 
             nav a {
-                margin: 0 1em;
+                margin: 0 0.5em;
+                font-size: 0.9em;
             }
 
-            .tabs {
+            .container {
                 flex-direction: column;
-                border-bottom: none;
+            }
+
+            .about-host {
+                width: 100%;
+                margin-top: 2em;
             }
         }
     </style>
@@ -212,7 +243,7 @@
 <body>
 
 <header>
-    <img src="images/logo.png" alt="Logo" class="logo"> <!-- Replace with your logo path -->
+    <img src="images/logo.png" alt="Logo" class="logo">
     <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
     <nav>
         <a href="#about">About</a>
@@ -227,56 +258,53 @@
     </marquee>
 </div>
 
-<div class="main-container">
-    <!-- Content Container -->
-    <div class="content-container">
-        <!-- About Section -->
+<div class="scrolling-feedback" style="background-color: #222; color: #ffd700;">
+    <marquee behavior="scroll" direction="left">
+        🎉  I am happy to announce you that i won first prize in Poetry at the District Level Yuva Utsav Competition, hosted by the Central Government!
+    </marquee>
+</div>
+
+<main class="container">
+    <div class="content-wrapper">
         <section id="about">
             <h2>About My Channel</h2>
             <p>Welcome to my YouTube channel! Here, I upload videos on tutorials and topics related to computers. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
         </section>
 
-        <!-- Tabs for Videos and Playlists -->
         <div class="tabs">
             <div class="tab active" onclick="showContent('videos')">Videos</div>
             <div class="tab" onclick="showContent('playlists')">Playlists</div>
         </div>
 
-        <!-- Videos Content -->
         <div id="videos" class="content active">
             <h2>Recent Videos</h2>
             <div class="gallery">
                 <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
-                <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
-                <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
-                <iframe src="https://www.youtube.com/embed/fvGoZ5jU0Ik" title="Video Title 4"></iframe>
+                <iframe src="https://www.youtube.com/embed/another-video" title="Video Title 2"></iframe>
+                <iframe src="https://www.youtube.com/embed/another-video" title="Video Title 3"></iframe>
             </div>
         </div>
 
-        <!-- Playlists Content -->
         <div id="playlists" class="content">
             <h2>Playlists</h2>
-            <p>Here you can find collections of videos grouped into playlists. More content is coming soon!</p>
+            <p>Check out my playlists for a curated selection of my videos!</p>
         </div>
     </div>
 
-    <!-- Sidebar for Channel Host Info -->
-    <aside class="sidebar">
-        <img src="me.jpg" alt="Sreeraj Patnaik" class="profile-photo"> <!-- Replace with your photo path -->
-        <h3>About Sreeraj Patnaik</h3>
-        <p>Hello! I'm Sreeraj Patnaik, your guide to the world of technology and computing. On this channel, I share tutorials, tech tips, and insights. I aim to make tech accessible and engaging for everyone.</p>
-        <h3>Follow Me</h3>
-        <p><a href="https://facebook.com/yourprofile" target="_blank">Facebook</a></p>
-        <p><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></p>
+    <aside class="about-host">
+        <h3>About Me</h3>
+        <img src="images/profile.jpg" alt="Sreeraj Patnaik Dabbiru">
+        <p>Hi! I am Sreeraj, a passionate content creator focusing on technology and computers. Join me on this journey!</p>
     </aside>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2024 Computech with Sreeraj Patnaik. All Rights Reserved. | <a href="https://privacy-policy.com" target="_blank">Privacy Policy</a></p>
+    <p>&copy; 2024 Computech with Sreeraj Patnaik. All rights reserved.</p>
+    <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
 </footer>
 
 <script>
-    function showContent(tabId) {
+    function showContent(id) {
         const contents = document.querySelectorAll('.content');
         const tabs = document.querySelectorAll('.tab');
 
@@ -288,8 +316,8 @@
             tab.classList.remove('active');
         });
 
-        document.getElementById(tabId).classList.add('active');
-        document.querySelector(`.tab[onclick="showContent('${tabId}')"]`).classList.add('active');
+        document.getElementById(id).classList.add('active');
+        document.querySelector(`.tab[onclick="showContent('${id}')"]`).classList.add('active');
     }
 </script>
 
