@@ -18,6 +18,9 @@
             background-color: #f4f4f6;
             color: #2d2e33;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             transition: background-color 0.3s ease;
         }
 
@@ -27,26 +30,18 @@
             padding: 1em;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
         }
 
         header .logo {
-            max-width: 150px; /* Adjust logo size */
-            margin-bottom: 0.5em; /* Space between logo and title */
+            max-width: 150px;
+            margin-bottom: 0.5em;
         }
 
         header h1 {
-            margin: 0;
             font-size: 2.2em;
             font-weight: 700;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        nav {
-            margin-top: 0.5em;
         }
 
         nav a {
@@ -54,7 +49,6 @@
             text-decoration: none;
             margin: 0 1.5em;
             font-weight: bold;
-            font-size: 1em;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
@@ -70,7 +64,7 @@
             text-align: center;
             overflow: hidden;
             font-weight: bold;
-            animation: glow-blink 1s infinite alternate;
+            width: 100%;
         }
 
         .scrolling-feedback a {
@@ -80,27 +74,54 @@
             margin-left: 10px;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
         }
 
-        /* Keyframes for blinking glow effect */
-        @keyframes glow-blink {
-            0%, 100% {
-                text-shadow: none;
-            }
-            50% {
-                text-shadow: 0 0 8px #ffd700, 0 0 12px #ffd700, 0 0 16px #ffd700;
-            }
-        }
-
-        .container {
+        /* Layout */
+        .main-container {
+            display: flex;
             width: 90%;
             max-width: 1200px;
-            margin: auto;
-            padding: 1em;
+            margin-top: 20px;
+            gap: 20px;
         }
 
-        /* Tabs Style */
+        .content-container {
+            flex: 4;
+            padding: 1em;
+            background: #f4f4f6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 1em;
+            background: #1a1c26;
+            color: #f4f4f6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .sidebar img.profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 0.5em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h3 {
+            color: #ffd700;
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
+        }
+
+        .sidebar p {
+            margin: 0.5em 0;
+        }
+
         .tabs {
             display: flex;
             justify-content: center;
@@ -111,44 +132,28 @@
         .tab {
             padding: 1em 2em;
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-            border-radius: 5px 5px 0 0;
+            font-weight: bold;
             background: #f4f4f6;
             color: #1a1c26;
-            font-weight: bold;
         }
 
-        .tab:hover {
-            background: #d9a52e;
-            color: #f4f4f6;
-        }
-
-        .tab.active {
+        .tab:hover, .tab.active {
             background: #1a1c26;
             color: #ffd700;
         }
 
-        /* Content Section */
         .content {
             display: none;
-            background: #f4f4f6;
-            padding: 2em;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2em;
-            border-top: 2px solid #d9a52e;
         }
 
         .content.active {
             display: block;
         }
 
-        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1em;
-            justify-items: center;
         }
 
         .gallery iframe {
@@ -156,13 +161,6 @@
             height: 200px;
             border: none;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery iframe:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         footer {
@@ -170,66 +168,18 @@
             color: #f4f4f6;
             text-align: center;
             padding: 1.5em 0;
-            border-top: 4px solid #d9a52e;
+            width: 100%;
+            max-width: 1200px;
             margin-top: 2em;
-        }
-
-        footer p {
-            margin: 0.5em 0;
         }
 
         footer a {
             color: #ffd700;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
         }
 
         footer a:hover {
             color: #d9a52e;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            nav a {
-                margin: 0 0.5em;
-                font-size: 0.9em;
-            }
-
-            header .logo {
-                max-width: 80px; /* Adjust logo size for smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            nav a {
-                margin: 0 0.3em;
-                font-size: 0.8em;
-            }
-
-            header .logo {
-                max-width: 60px; /* Further adjust for mobile */
-            }
         }
     </style>
 </head>
@@ -244,47 +194,57 @@
     </nav>
 </header>
 
-<!-- Scrolling Feedback Request -->
 <div class="scrolling-feedback">
-    <marquee behavior="scroll" direction="left" style="font-weight: bold;">
-        We value your feedback! Let us know how we can improve the channel. 
+    <marquee behavior="scroll" direction="left">
+        We value your feedback! Let us know how we can improve the channel.
         <a href="https://surveyheart.com/form/6723cd32c6f4220631356d9d" target="_blank">Take Survey</a>
     </marquee>
 </div>
 
-<main class="container">
-    <!-- About Section -->
-    <section id="about">
-        <h2>About My Channel</h2>
-        <p>Welcome to my YouTube channel! Here, I upload videos on tutorials and topics related to computers. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
-    </section>
+<div class="main-container">
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About My Channel</h2>
+            <p>Welcome to my YouTube channel! Here, I upload videos on tutorials and topics related to computers. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
+        </section>
 
-    <!-- Tabs for Videos and Playlists -->
-    <div class="tabs">
-        <div class="tab active" onclick="showContent('videos')">Videos</div>
-        <div class="tab" onclick="showContent('playlists')">Playlists</div>
-    </div>
+        <!-- Tabs for Videos and Playlists -->
+        <div class="tabs">
+            <div class="tab active" onclick="showContent('videos')">Videos</div>
+            <div class="tab" onclick="showContent('playlists')">Playlists</div>
+        </div>
 
-    <!-- Videos Content -->
-    <div id="videos" class="content active">
-        <h2>Recent Videos</h2>
-        <div class="gallery">
-            <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
-            <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
-            <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
-            <iframe src="https://www.youtube.com/embed/fvGoZ5jU0Ik" title="Video Title 4"></iframe>
-            <iframe src="https://www.youtube.com/embed/ylL9rebJYpk" title="Video Title 5"></iframe>
-            <iframe src="https://www.youtube.com/embed/--nrRiDpG-Q" title="Video Title 6"></iframe>
-            <iframe src="https://www.youtube.com/embed/1e5VQeVMm0E" title="Video Title 7"></iframe>
+        <!-- Videos Content -->
+        <div id="videos" class="content active">
+            <h2>Recent Videos</h2>
+            <div class="gallery">
+                <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
+                <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
+                <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
+                <iframe src="https://www.youtube.com/embed/fvGoZ5jU0Ik" title="Video Title 4"></iframe>
+            </div>
+        </div>
+
+        <!-- Playlists Content -->
+        <div id="playlists" class="content">
+            <h2>Playlists</h2>
+            <p>Here you can find collections of videos grouped into playlists. More content is coming soon!</p>
         </div>
     </div>
 
-    <!-- Playlists Content -->
-    <div id="playlists" class="content">
-        <h2>Playlists</h2>
-        <p>Here you can find collections of videos grouped into playlists. More content is coming soon!</p>
-    </div>
-</main>
+    <!-- Sidebar for Channel Host Info -->
+    <aside class="sidebar">
+        <img src="me.jpg" alt="Sreeraj Patnaik" class="profile-photo"> <!-- Replace with your photo path -->
+        <h3>About Sreeraj Patnaik</h3>
+        <p>Hello! I'm Sreeraj Patnaik, your guide to the world of technology and computing. On this channel, I share tutorials, tech tips, and insights. I aim to make tech accessible and engaging for everyone.</p>
+        <h3>Follow Me</h3>
+        <p><a href="https://facebook.com/yourprofile" target="_blank">Facebook</a></p>
+        <p><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></p>
+        <p><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></p>
+    </aside>
+</div>
 
 <footer>
     <p>&copy; 2024 Sreeraj Patnaik | Connect with me:</p>
@@ -303,8 +263,8 @@
         tabs.forEach(tab => tab.classList.remove('active'));
         contents.forEach(content => content.classList.remove('active'));
 
+        document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
         document.getElementById(contentId).classList.add('active');
-        document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
     }
 </script>
 
