@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources & Downloads | Sreeraj's Tutorials</title>
+<style>
+    /* Reset & Basic Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        background-color: #f4f1e9; /* tan */
+        color: #333;
+    }
+
+    /* Header */
+    header {
+        background-color: #ff6f00; /* orange */
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Resources Section */
+    .resources-section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .resources-section h1 {
+        font-size: 2.5rem;
+        color: #e63946; /* red */
+        margin-bottom: 20px;
+    }
+    .resources-section p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+
+    /* Resource Grid */
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .resource-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .resource-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Resource Card Content */
+    .resource-content {
+        padding: 20px;
+        text-align: left;
+    }
+    .resource-title {
+        font-size: 1.5rem;
+        color: #ff6f00; /* orange */
+        margin-bottom: 10px;
+    }
+    .resource-description {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    /* Download Button */
+    .download-button {
+        background-color: #e63946; /* red */
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        border-radius: 0 0 8px 8px;
+    }
+    .download-button:hover {
+        background-color: #d62828; /* darker red */
+    }
+
+/* Quick Links Section */
+    .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #fff;
+        gap: 15px;
+    }
+    .quick-links div {
+        background-color: #f4a261; /* light orange */
+        color: #fff;
+        padding: 20px;
+        width: 150px;
+        text-align: center;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .quick-links div:hover {
+        background-color: #ff6f00;
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .quick-links div a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .resources-section h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Resources & Downloads</h1>
+</header>
+<!-- Quick Links Section -->
+<section class="quick-links" id="quick-links">
+    <div><a href="file:///C:/Users/Administrator/Desktop/New%20folder%20(2)/index.html">Home</a></div>
+    <div><a href="file:///C:/Users/Administrator/Desktop/New%20folder%20(2)/aboutme.html">About Me</a></div>
+    <div><a href="file:///C:/Users/Administrator/Desktop/New%20folder%20(2)/index.html#tutorials">Video Tutorials</a></div>
+    
+    <div><a href="#resources">Resources & Downloads</a></div>
+    <div><a href="#contact">Contact</a></div>
+</section>
+
+<!-- Resources Section -->
+<section class="resources-section">
+    <h1>Free Resources & Downloads</h1>
+    <p>Download guides, cheat sheets, and code examples to aid your learning journey.</p>
+
+    <!-- Resource Grid -->
+    <div class="resource-grid">
+        <!-- Resource Card 1 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">Python Basics chapter 1</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/1 - Introduction to Python.docx" download class="download-button">Download PDF</a>
+        </div>
+
+
+
+<!-- Resource Card 2 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">2 - python Operators & Conditional Statements</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/2 - Operators & Conditional Statements.docx" download class="download-button">Download PDF</a>
+        </div>
+
+
+<!-- Resource Card 3 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">3 - Loop Control Statements</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/3 - Loop Control Statements.docx" download class="download-button">Download PDF</a>
+        </div>
+
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+
+
+<!-- Resource Card 5 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">5 - Functions</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/5 - Functions.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 6 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">6 - Lists</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/6 - Lists.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 7 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">7 - List Comprehension</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/7 - List Comprehension.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 8 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">8 - Tuples</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/8 - Tuples.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 9 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">9 - Sets</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/9 - Setss.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 10 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">10 - dictionary</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/10 - dictionary.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 11-->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">11 - Error Handling</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/11 - Error Handling.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+<!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">4 - Strings and Numbers</h2>
+                <p class="resource-description">A handy cheat sheet covering Python basics</p>
+            </div>
+            <a href="PDFS/4 - Strings and Numbers.docx" download class="download-button">Download PDF</a>
+        </div>
+
+
+
+
+
+
+
+        <!-- Resource Card 2 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">HTML & CSS Guide</h2>
+                <p class="resource-description">An in-depth guide to HTML and CSS, perfect for beginners learning to build websites.</p>
+            </div>
+            <a href="downloads/html_css_guide.pdf" download class="download-button">Download PDF</a>
+        </div>
+
+        <!-- Resource Card 3 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">JavaScript Code Snippets</h2>
+                <p class="resource-description">A collection of useful JavaScript code snippets to enhance your web development skills.</p>
+            </div>
+            <a href="downloads/javascript_snippets.zip" download class="download-button">Download ZIP</a>
+        </div>
+
+        <!-- Resource Card 4 -->
+        <div class="resource-card">
+            <div class="resource-content">
+                <h2 class="resource-title">Web Development Setup Guide</h2>
+                <p class="resource-description">Instructions on setting up your web development environment, including IDEs and tools.</p>
+            </div>
+            <a href="downloads/web_dev_setup_guide.pdf" download class="download-button">Download PDF</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
